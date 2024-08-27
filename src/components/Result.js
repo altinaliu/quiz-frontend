@@ -1,5 +1,3 @@
-//components/Result.js
-
 import React, { useEffect } from "react";
 import "../styles/Result.css";
 import { Link } from "react-router-dom";

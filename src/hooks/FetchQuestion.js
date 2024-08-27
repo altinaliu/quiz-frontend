@@ -1,5 +1,3 @@
-//hooks/FetchQuestions.js
-
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getServerData } from "../helper/helper";

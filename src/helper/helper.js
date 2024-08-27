@@ -1,5 +1,3 @@
-//helper/helper.js
-
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import axios from "axios";

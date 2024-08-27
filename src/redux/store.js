@@ -1,5 +1,3 @@
-//redux/store.js
-
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 /** call reducers */

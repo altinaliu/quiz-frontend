@@ -1,5 +1,3 @@
-//redux/result_rducer.js
-
 import { createSlice } from "@reduxjs/toolkit";
 
 export const resultReducer = createSlice({

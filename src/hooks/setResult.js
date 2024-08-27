@@ -1,5 +1,3 @@
-//hooks/setResult.js
-
 import { postServerData } from "../helper/helper";
 import * as Action from "../redux/result_reducer";
 

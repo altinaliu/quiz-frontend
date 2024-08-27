@@ -1,5 +1,3 @@
-//components/ResultTable.js
-
 import React, { useEffect, useState } from 'react';
 import { getServerData } from '../helper/helper';
 
