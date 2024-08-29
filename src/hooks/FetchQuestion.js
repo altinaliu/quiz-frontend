@@ -18,10 +18,8 @@ export const useFetchQestion = () => {
         /** async function fetch backend data */
         (async () => {
             try {
-                const apiUrl = `https://quiz-smoky-seven.vercel.app/api/questions`; // Replace with your deployed backend URL
-
                 const [{ questions, answers }] = await getServerData(
-                    apiUrl,
+                    `http://localhost:${process.env.PORT || 5000}/api/questions`,
                     (data) => data
                 );
 
@@ -42,4 +40,22 @@ export const useFetchQestion = () => {
     }, [dispatch]);
 
     return [getData, setGetData];
+};
+
+/** MoveAction Dispatch function */
+export const MoveNextQuestion = () => (dispatch) => {
+    try {
+        dispatch(Action.moveNextAction()); /** increase trace by 1 */
+    } catch (error) {
+        console.error("Error moving to next question:", error);
+    }
+};
+
+/** PrevAction Dispatch function */
+export const MovePrevQuestion = () => (dispatch) => {
+    try {
+        dispatch(Action.movePrevAction()); /** decrease trace by 1 */
+    } catch (error) {
+        console.error("Error moving to previous question:", error);
+    }
 };
