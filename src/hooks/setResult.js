@@ -1,6 +1,10 @@
 import { postServerData } from "../helper/helper";
 import * as Action from "../redux/result_reducer";
 
+// Environment variable for API URL
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+
+// Push answer action
 export const PushAnswer = (result) => async (dispatch) => {
     try {
         await dispatch(Action.pushResultAction(result));
@@ -9,6 +13,7 @@ export const PushAnswer = (result) => async (dispatch) => {
     }
 };
 
+// Update result action
 export const updateResult = (payload) => async (dispatch) => {
     try {
         dispatch(Action.updateResultAction(payload));
@@ -17,7 +22,7 @@ export const updateResult = (payload) => async (dispatch) => {
     }
 };
 
-/** insert user data */
+// Insert user data
 export const usePublishResult = (resultData) => {
     const { result, username } = resultData;
     (async () => {
@@ -25,9 +30,8 @@ export const usePublishResult = (resultData) => {
             if (!result.length || !username) {
                 throw new Error("Couldn't get Result: Invalid result or username.");
             }
-            const port = process.env.PORT || 5000;
             const response = await postServerData(
-                `http://localhost:${port}/api/result`,
+                `${API_URL}/api/result`,
                 resultData
             );
             console.log("Result published:", response);
